@@ -21,14 +21,11 @@ public class GamePanel extends JPanel {
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         g2.setPaint(Color.yellow);
-
         g2.setBackground(Color.black);
         g2.clearRect(0, 0, getWidth(), getHeight());
-        g2.drawLine(0, 0, 500, 500);
-        // Gun gun = new Gun();
-        // gun.draw(g2);
-
-        System.out.println("draw");
+        Gun gun = new Gun();
+        gun.draw(g2);
+        // System.out.println("draw");
     }
 
     public void update(Graphics g) {

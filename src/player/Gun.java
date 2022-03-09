@@ -8,8 +8,8 @@ public class Gun {
     private Polygon gun;
 
     public Gun() {
-        int[] xList = { 12, 26, 25, 19, 13, 9, 1, 0 };
-        int[] yList = { 0, 19, 20, 11, 20, 11, 20, 19 };
+        int[] xList = { 30, 60, 50, 40, 30, 20, 10, 0 };
+        int[] yList = { 0, 24, 30, 20, 30, 20, 30, 24 };
         gun = new Polygon(xList, yList, xList.length);
     }
 
