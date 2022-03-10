@@ -1,11 +1,14 @@
 package src.player;
 
 import java.awt.Polygon;
+import java.io.PipedOutputStream;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 import java.awt.Color;
+import java.awt.Point;
 
 import src.Main;
+import src.bullet.PlayerBullet;
 
 public class Gun {
     public Polygon gun;
@@ -68,10 +71,8 @@ public class Gun {
     // 前後左右の座標を返す
     public int getEdge(String dir) {
         int min_x, max_x, min_y, max_y;
-        min_x = Integer.MAX_VALUE;
-        max_x = Integer.MIN_VALUE;
-        min_y = Integer.MAX_VALUE;
-        max_y = Integer.MIN_VALUE;
+        min_x = min_y = Integer.MAX_VALUE;
+        max_x = max_y = Integer.MIN_VALUE;
 
         for (int x : this.gun.xpoints) {
             min_x = Math.min(min_x, x);
@@ -91,9 +92,28 @@ public class Gun {
             return min_y;
         if (dir == "bottom")
             return max_y;
-        return -1;
+        else
+            return -1;
     }
 
     public void setGun() {
+    }
+
+    public Point getGun(String LR) {
+        Point p = new Point();
+        double x, y;
+        x = y = 0;
+        int len = this.gun.xpoints.length;
+
+        if (LR == "left") {
+            x = (this.gun.xpoints[0] + this.gun.xpoints[len - 1]) / 2;
+            y = (this.gun.ypoints[0] + this.gun.ypoints[len - 1]) / 2;
+        } else if (LR == "right") {
+            x = (this.gun.xpoints[0] + this.gun.xpoints[1]) / 2;
+            y = (this.gun.ypoints[0] + this.gun.ypoints[1]) / 2;
+        }
+
+        p.setLocation(x, y);
+        return p;
     }
 }
