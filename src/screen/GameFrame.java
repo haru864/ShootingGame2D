@@ -3,6 +3,7 @@ package src.screen;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
+import javax.swing.plaf.DimensionUIResource;
 
 import src.Main;
 
@@ -14,15 +15,16 @@ public class GameFrame extends JFrame {
 
     public GameFrame() {
         gamePanel = new GamePanel();
-        // System.out.println("panel created");
 
         this.setTitle("2Dシューティング");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
+        // this.setSize(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
+        this.getContentPane().setPreferredSize(new Dimension(Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT));
 
         this.add(gamePanel);
-        // System.out.println("panel added");
-        this.setLocationRelativeTo(null);
+        // this.setLocationRelativeTo(null);
+        this.setLocation(200, 200);
+        this.pack();
         this.setVisible(true);
     }
 }

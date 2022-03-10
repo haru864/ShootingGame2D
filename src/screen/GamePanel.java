@@ -20,12 +20,12 @@ public class GamePanel extends JPanel {
 
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
-        g2.setPaint(Color.yellow);
         g2.setBackground(Color.black);
         g2.clearRect(0, 0, getWidth(), getHeight());
-        Gun gun = new Gun();
+        // Gun gun = new Gun(60, Main.SCREEN_HEIGHT - Gun.HEAD_TO_TAIL);
+        Gun gun = new Gun((Main.SCREEN_WIDTH - Gun.LEFT_TO_RIGHT) / 2,
+                Main.SCREEN_HEIGHT - Gun.HEAD_TO_TAIL - 20);
         gun.draw(g2);
-        // System.out.println("draw");
     }
 
     public void update(Graphics g) {
