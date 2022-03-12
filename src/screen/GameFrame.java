@@ -8,6 +8,7 @@ import java.awt.Dimension;
 
 public class GameFrame extends JFrame {
     public JPanel gamePanel;
+    public static Thread t;
 
     public GameFrame() {
         gamePanel = new GamePanel();
@@ -22,5 +23,25 @@ public class GameFrame extends JFrame {
         this.setLocation(200, 200);
         this.pack();
         this.setVisible(true);
+
+        Thread drawingThread = new Thread(() -> {
+            t = new Thread() {
+                public void run() {
+                    Thread ct = Thread.currentThread();
+                    while (t == ct) {
+                        try {
+                            Thread.sleep(10);
+                            gamePanel.repaint();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+            };
+            t.start();
+        });
+        drawingThread.start();
+        System.out.println(Thread.activeCount());
     }
 }

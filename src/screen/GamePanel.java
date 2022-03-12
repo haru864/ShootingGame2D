@@ -40,8 +40,8 @@ public class GamePanel extends JPanel implements KeyListener {
             if (playerBulletLeft.getBulletY() > 0) {
                 playerBulletLeft.draw(g2);
                 playerBulletRight.draw(g2);
-                playerBulletLeft.setBulletY(playerBulletLeft.getBulletY() - 5);
-                playerBulletRight.setBulletY(playerBulletRight.getBulletY() - 5);
+                playerBulletLeft.setBulletY(playerBulletLeft.getBulletY() - 3);
+                playerBulletRight.setBulletY(playerBulletRight.getBulletY() - 3);
             } else {
                 playerBulletLeft = null;
                 playerBulletRight = null;
@@ -75,7 +75,7 @@ public class GamePanel extends JPanel implements KeyListener {
                             player.getGun("right").y - 5)
                     : playerBulletRight;
         }
-        repaint(); // call paint() method
+        // repaint(); // call paint() method
     }
 
     @Override
