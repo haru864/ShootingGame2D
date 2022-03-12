@@ -29,4 +29,13 @@ public class PlayerBullet {
         g2d.setColor(Color.BLACK);
         g2d.draw(bullet);
     }
+
+    public void setBulletY(int y) {
+        r.y = y;
+        bullet.setFrame(r);
+    }
+
+    public int getBulletY() {
+        return r.y;
+    }
 }

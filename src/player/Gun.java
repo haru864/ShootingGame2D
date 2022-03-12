@@ -1,14 +1,9 @@
 package src.player;
 
 import java.awt.Polygon;
-import java.io.PipedOutputStream;
-import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 import java.awt.Color;
 import java.awt.Point;
-
-import src.Main;
-import src.bullet.PlayerBullet;
 
 public class Gun {
     public Polygon gun;

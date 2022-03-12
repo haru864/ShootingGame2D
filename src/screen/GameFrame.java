@@ -2,12 +2,8 @@ package src.screen;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
-import javax.swing.plaf.DimensionUIResource;
-
 import src.Main;
 
-import java.awt.Color;
 import java.awt.Dimension;
 
 public class GameFrame extends JFrame {
